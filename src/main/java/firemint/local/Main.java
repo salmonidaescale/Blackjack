@@ -14,12 +14,14 @@ public class Main {
         double bankroll;
         out.print("Initial amount: ");
         bankroll = input.nextDouble();
-        int n = 0;
-        while (n < 5) {
+        
+        while (true) {
             //Get user bet value as double
             out.print("Enter bet: ");
             double bet = input.nextDouble();
-
+            if (bet <= 0) {
+                break;
+            }
             double rWinnings;
 
             //rWinnings calculations
@@ -43,7 +45,6 @@ public class Main {
             }
             handList.add(new Hand(bet, rWinnings, bankroll));
             // break;
-            n++;
             bet = 0;
             // rWinnings = 0;
         }//End of loop
